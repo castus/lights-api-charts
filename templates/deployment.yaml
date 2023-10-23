@@ -30,7 +30,6 @@ spec:
       {{- if not .Values.serviceAccount.create }}
       serviceAccountName: {{ include "lights-api.serviceAccountName" . }}
       {{- end }}
-      restartPolicy: Never
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:

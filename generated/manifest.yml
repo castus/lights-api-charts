@@ -48,7 +48,6 @@ spec:
         app.kubernetes.io/managed-by: Helm
     spec:
       serviceAccountName: default
-      restartPolicy: Never
       securityContext:
         {}
       containers:
