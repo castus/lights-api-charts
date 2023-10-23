@@ -59,7 +59,7 @@ spec:
             readOnlyRootFilesystem: true
             runAsNonRoot: true
             runAsUser: 1000
-          image: "c4stus/lights-api:sha-bf7bafb"
+          image: "c4stus/lights-api:sha-8e477df"
           imagePullPolicy: IfNotPresent
           command: ["ls"]
           args:
