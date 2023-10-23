@@ -48,6 +48,7 @@ spec:
         app.kubernetes.io/managed-by: Helm
     spec:
       serviceAccountName: default
+      restartPolicy: Never
       securityContext:
         {}
       containers:
@@ -61,6 +62,7 @@ spec:
             runAsUser: 1000
           image: "c4stus/lights-api:sha-bf7bafb"
           imagePullPolicy: IfNotPresent
+          command: ["./lights-api"]
           ports:
             - name: http
               containerPort: 8080

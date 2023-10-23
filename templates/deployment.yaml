@@ -30,6 +30,7 @@ spec:
       {{- if not .Values.serviceAccount.create }}
       serviceAccountName: {{ include "lights-api.serviceAccountName" . }}
       {{- end }}
+      restartPolicy: Never
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -38,6 +39,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["./lights-api"]
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
