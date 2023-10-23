@@ -61,7 +61,9 @@ spec:
             runAsUser: 1000
           image: "c4stus/lights-api:sha-bf7bafb"
           imagePullPolicy: IfNotPresent
-          command: ["lights-api"]
+          command: ["ls"]
+          args:
+            - "-la"
           ports:
             - name: http
               containerPort: 8080
