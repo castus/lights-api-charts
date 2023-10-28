@@ -3,7 +3,8 @@ name: Deploy the next version of charts with a image tag
 on:
   repository_dispatch:
     types: [deploy]
-
+permissions:
+  contents: write
 jobs:
   ping-pong:
     runs-on: ubuntu-latest
