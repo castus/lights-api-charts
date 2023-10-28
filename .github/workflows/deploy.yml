@@ -6,7 +6,8 @@ on:
 permissions:
   contents: write
 jobs:
-  ping-pong:
+  deploy:
+    name: Generate and deploy manifests
     runs-on: ubuntu-latest
     steps:
       - name: Event Information
@@ -21,7 +22,7 @@ jobs:
       - name: Generate template
         run: |
           helm template . --set image.tag=${{ github.event.client_payload.image_tag }} > ./generated/manifest.yml
-      - name: Commit report
+      - name: Commit manifest
         run: |
           git config --global user.name 'Deploy bot'
           git config --global user.email 'castus.bot@gmail.com'
