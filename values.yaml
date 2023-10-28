@@ -7,7 +7,6 @@ replicaCount: 1
 image:
   repository: c4stus/lights-api
   pullPolicy: IfNotPresent
-  tag: "sha-8e477df"
 
 imagePullSecrets: []
 nameOverride: ""
